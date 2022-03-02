@@ -31,10 +31,10 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value = "/code/codeGroupInst")
-	public String codeGroupInst() throws Exception {
+	public String codeGroupInst(Model model, Code dto) throws Exception {
 		
 		// 입력이 되어야 함
-		service.insert();
+		service.insert(dto);
 		
 		return "";
 	}
