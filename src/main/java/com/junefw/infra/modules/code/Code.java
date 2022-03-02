@@ -5,7 +5,8 @@ public class Code {
 //	DTO
 	private String ifcgSeq;
 	private String ifcgName;
-	private Integer ifcgDelNy;
+	private String ifcdSeq;
+	private String ifcdName;
 	
 //------------
 	public String getIfcgSeq() {
@@ -20,11 +21,17 @@ public class Code {
 	public void setIfcgName(String ifcgName) {
 		this.ifcgName = ifcgName;
 	}
-	public Integer getIfcgDelNy() {
-		return ifcgDelNy;
+	public String getIfcdSeq() {
+		return ifcdSeq;
 	}
-	public void setIfcgDelNy(Integer ifcgDelNy) {
-		this.ifcgDelNy = ifcgDelNy;
+	public void setIfcdSeq(String ifcdSeq) {
+		this.ifcdSeq = ifcdSeq;
+	}
+	public String getIfcdName() {
+		return ifcdName;
+	}
+	public void setIfcdName(String ifcdName) {
+		this.ifcdName = ifcdName;
 	}
 
 	

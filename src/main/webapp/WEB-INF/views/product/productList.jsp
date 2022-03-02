@@ -14,7 +14,7 @@
 	<c:otherwise>
 		<c:forEach items="${list}" var="item" varStatus="status">	
 		
-		<c:out value="${item.ifcgSeq}"/> | <c:out value="${item.ifcgName}"/> | <c:out value="${item.ifcdSeq}"/> | <c:out value="${item.ifcdName}"/><br>
+		<c:out value="${item.trpdSeq}"/> | <c:out value="${item.trpdName}"/> | <c:out value="${item.trpdPrice}"/> <br>
 		
 		</c:forEach>
 	</c:otherwise>
