@@ -5,9 +5,9 @@ public class Product {
 //	DTO
 	private Integer trpdSeq;
 	private String trpdName;
-	private Integer trpdPrice;
-	private Integer trpdDelNy;
-	
+	private String tropName;
+	private String trocName;
+	private Integer trocAdditionalPrice;
 //------------
 	public Integer getTrpdSeq() {
 		return trpdSeq;
@@ -21,17 +21,23 @@ public class Product {
 	public void setTrpdName(String trpdName) {
 		this.trpdName = trpdName;
 	}
-	public Integer getTrpdPrice() {
-		return trpdPrice;
+	public String getTropName() {
+		return tropName;
 	}
-	public void setTrpdPrice(Integer trpdPrice) {
-		this.trpdPrice = trpdPrice;
+	public void setTropName(String tropName) {
+		this.tropName = tropName;
 	}
-	public Integer getTrpdDelNy() {
-		return trpdDelNy;
+	public String getTrocName() {
+		return trocName;
 	}
-	public void setTrpdDelNy(Integer trpdDelNy) {
-		this.trpdDelNy = trpdDelNy;
+	public void setTrocName(String trocName) {
+		this.trocName = trocName;
+	}
+	public Integer getTrocAdditionalPrice() {
+		return trocAdditionalPrice;
+	}
+	public void setTrocAdditionalPrice(Integer trocAdditionalPrice) {
+		this.trocAdditionalPrice = trocAdditionalPrice;
 	}
 
 	
