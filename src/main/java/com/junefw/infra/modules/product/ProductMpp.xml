@@ -16,6 +16,7 @@
 			,b.tropName
 			,c.trocName
 			,c.trocAdditionalPrice
+			,(select trorOrderId from cpcpcp.tradorder where trpdSeq = a.trpdSeq) as trorOrderId123
 			
 			from cpcpcp.tradproduct a
 			left join cpcpcp.tradOptionParent b 

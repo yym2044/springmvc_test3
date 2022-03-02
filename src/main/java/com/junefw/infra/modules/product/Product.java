@@ -8,6 +8,7 @@ public class Product {
 	private String tropName;
 	private String trocName;
 	private Integer trocAdditionalPrice;
+	private String trorOrderId123;
 //------------
 	public Integer getTrpdSeq() {
 		return trpdSeq;
@@ -38,6 +39,12 @@ public class Product {
 	}
 	public void setTrocAdditionalPrice(Integer trocAdditionalPrice) {
 		this.trocAdditionalPrice = trocAdditionalPrice;
+	}
+	public String getTrorOrderId123() {
+		return trorOrderId123;
+	}
+	public void setTrorOrderId123(String trorOrderId123) {
+		this.trorOrderId123 = trorOrderId123;
 	}
 
 	

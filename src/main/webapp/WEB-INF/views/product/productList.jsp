@@ -14,7 +14,7 @@
 	<c:otherwise>
 		<c:forEach items="${list}" var="item" varStatus="status">	
 		
-		<c:out value="${item.trpdSeq}"/> | <c:out value="${item.trpdName}"/> | <c:out value="${item.tropName}"/> | <c:out value="${item.trocName}"/> | <c:out value="${item.trocAdditionalPrice}"/> <br>
+		<c:out value="${item.trpdSeq}"/> | <c:out value="${item.trpdName}"/> | <c:out value="${item.tropName}"/> | <c:out value="${item.trocName}"/> | <c:out value="${item.trocAdditionalPrice}"/> | <c:out value="${item.trorOrderId123}"/> <br>
 		
 		</c:forEach>
 	</c:otherwise>
