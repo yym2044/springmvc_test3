@@ -41,7 +41,7 @@
 		FROM 
 			cpcpcp.infrCodeGroup a
 		WHERE 1=1
-			AND ifcgSeq = ${ifcgSeq}
+			AND ifcgSeq = #{ifcgSeq}
 		
 	</select>
 	

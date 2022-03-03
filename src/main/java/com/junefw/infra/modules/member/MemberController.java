@@ -17,8 +17,11 @@ public class MemberController {
 //	public String memberList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 	public String memberList(Model model) throws Exception {
 
+
 		List<Member> list = service.selectList();
 		model.addAttribute("list", list);
+		
+//		model.addAttribute("list", service.selectList());  위 두줄 대신 이렇게도 가능
 
 		return "member/memberList";
 	}
