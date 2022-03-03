@@ -25,7 +25,7 @@
 					or b.tropSeq = a.trpdOptionParentCd3
 			left join cpcpcp.tradoptionchild c
 				on c.tropSeq = b.tropSeq
-			where a.trpdSeq = 1
+			where a.trpdSeq = 2
 			
 	</select>
 
