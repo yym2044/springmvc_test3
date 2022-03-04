@@ -69,7 +69,7 @@ public class CodeController {
 		return "code/codeGroupEditForm";
 	}
 	
-//	@RequestMapping(value = "/code/codeGroupUpdt")
+//	@RequestMapping(value = "/code/codeGroupUpdt")		// CodeVo.java에 필드 추가
 //	public String codeGroupUpdt(Model model, CodeVo vo) throws Exception {
 //
 //		// 업데이트 하는 구문

@@ -11,9 +11,9 @@
 
 	<select id="selectList" resultMap="resultMapObj">
 		select
-		ifmmSeq
-		, ifmmId
-		, ifmmName
+			ifmmSeq
+			, ifmmId
+			, ifmmName
 		from
 		infrMember
 	</select>

@@ -14,7 +14,7 @@
 	<c:otherwise>
 		<c:forEach items="${list}" var="item" varStatus="status">	
 		
-		<c:out value="${item.trpdSeq}"/> | <c:out value="${item.trpdPid}"/> | <a href="/infra/product/productOption?trpdSeq=${item.trpdSeq}"><c:out value="${item.trpdName}"/></a> | <c:out value="${item.trpdPrice}원"/> <br>
+		<c:out value="${item.tropName}"/> | <c:out value="${item.trocName}"/> | <c:out value="+${item.trocAdditionalPrice}원"/> <br> 
 		
 		</c:forEach>
 	</c:otherwise>

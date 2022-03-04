@@ -10,23 +10,34 @@
 		type="com.junefw.infra.modules.product.Product"></resultMap> <!-- 결과 객체 저장 -->
 
 	<select id="selectList" resultMap="resultMapObj">
-		select
+		SELECT
+			trpdSeq
+			,trpdPid
+			,trpdName
+			,trpdPrice
+		FROM
+			tradProduct
+	</select>
+	
+	<select id="selectList2" resultMap="resultMapObj">
+		SELECT
 			a.trpdseq
 			,a.trpdName
 			,b.tropName
 			,c.trocName
-			,c.trocAdditionalPrice
-			,(select trorOrderId from cpcpcp.tradorder where trpdSeq = a.trpdSeq) as trorOrderId123
-			
-			from cpcpcp.tradproduct a
-			left join cpcpcp.tradOptionParent b 
-				on b.tropSeq = a.trpdOptionParentCd1 
-					or b.tropSeq = a.trpdOptionParentCd2 
-					or b.tropSeq = a.trpdOptionParentCd3
-			left join cpcpcp.tradoptionchild c
-				on c.tropSeq = b.tropSeq
-			where a.trpdSeq = 2
-			
+			,c.trocAdditionalPrice	
+		FROM 
+			tradProduct a
+		LEFT JOIN 
+			tradOptionParent b 
+				ON b.tropSeq = a.trpdOptionParentCd1 
+					OR b.tropSeq = a.trpdOptionParentCd2 
+					OR b.tropSeq = a.trpdOptionParentCd3
+		LEFT JOIN 
+			tradOptionChild c
+				ON c.tropSeq = b.tropSeq
+		WHERE 
+			a.trpdSeq = #{trpdSeq}
 	</select>
 
 </mapper>

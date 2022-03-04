@@ -18,4 +18,5 @@ public class ProductDao {
 
 	public List<Product> selectList() { return sqlSession.selectList(namespace + ".selectList", "");}
 	
+	public List<Product> selectList2(ProductVo vo){return sqlSession.selectList(namespace + ".selectList2", vo);}
 }

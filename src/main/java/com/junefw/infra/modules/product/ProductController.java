@@ -23,5 +23,15 @@ public class ProductController {
 		return "product/productList";
 	}
 	
+	@RequestMapping(value = "/product/productOption")
+	public String productList(Model model, ProductVo vo) throws Exception {
+		
+		List<Product> list = service.selectList2(vo);
+		
+		model.addAttribute("list", list);
+		
+		return "product/productOption";
+	}
+	
 	
 }
