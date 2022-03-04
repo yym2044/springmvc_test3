@@ -5,6 +5,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+
+
+
 <c:choose>
 	<c:when test="${fn:length(list) eq 0}">
 		<tr>
@@ -14,7 +17,7 @@
 	<c:otherwise>
 		<c:forEach items="${list}" var="item" varStatus="status">	
 		
-		<a href="/infra/code/codeGroupView2?ifcgSeq=${item.ifcgSeq}"><c:out value="${item.ifcgSeq}"/></a> | <a href="/infra/code/codeGroupView1?ifcgSeq=${item.ifcgSeq}"><c:out value="${item.ifcgName}"/></a><br>
+		<c:out value="${item.ifcgSeq}"/> | <c:out value="${item.ifcgName}"/> | <c:out value="${item.ifcdSeq}"/> | <c:out value="${item.ifcdName}"/><br>
 		
 		</c:forEach>
 	</c:otherwise>

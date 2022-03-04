@@ -12,43 +12,40 @@ public class CodeController {
 
 	@Autowired
 	CodeServiceImpl service;
-	
+
 	@RequestMapping(value = "/code/codeGroupList")
 	public String codeGroupList(Model model) throws Exception {
-		
+
 		List<Code> list = service.selectList();
-		
+
 		model.addAttribute("list", list);
-		
+
 		return "code/codeGroupList";
 	}
-	
+
 	@RequestMapping(value = "/code/codeGroupForm")
 	public String codeGroupForm() throws Exception {
-		
-		
+
 		return "code/codeGroupForm";
 	}
-	
+
 	@RequestMapping(value = "/code/codeGroupInst")
 	public String codeGroupInst(Model model, Code dto) throws Exception {
-		
+
 		// 입력이 되어야 함
 		service.insert(dto);
-		
+
 		return "";
 	}
-	
-	@RequestMapping(value = "/code/codeGroupView")
-	public String codeGroupView(Model model, CodeVo vo) throws Exception {
-		
-		Code rt = service.selectOne(vo);
-		
-		model.addAttribute("rt", rt);
-		
-		return "code/codeGroupView";
+
+	@RequestMapping(value = "/code/codeGroupView2")
+	public String codeGroupView2(Model model, CodeVo vo) throws Exception {
+
+		List<Code> list = service.selectList2(vo);
+
+		model.addAttribute("list", list);
+
+		return "code/codeGroupView2";
 	}
-	
-	
-	
+
 }

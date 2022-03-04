@@ -22,10 +22,15 @@ public class CodeServiceImpl implements CodeService{
 	}
 
 	@Override
-	public Code selectOne(CodeVo vo) {
-
+	public Code selectOne(CodeVo vo) throws Exception {
+		
 		return dao.selectOne(vo);
 	}
-	
+
+	@Override
+	public List<Code> selectList2(CodeVo vo) throws Exception {
+		
+		return dao.selectList2(vo);
+	}
 	
 }
