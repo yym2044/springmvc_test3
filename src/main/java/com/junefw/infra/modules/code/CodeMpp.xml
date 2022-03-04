@@ -18,7 +18,7 @@
 		FROM 
 			cpcpcp.infrCodeGroup a
 		WHERE 1=1
-			AND ifcgDelNy = 0
+			<!-- AND a.ifcgDelNy = 0 -->
 		
 	</select>
 
@@ -41,10 +41,10 @@
 		FROM 
 			cpcpcp.infrCodeGroup a
 		WHERE 1=1
-			AND a.ifcgDelNy = 0
+			<!-- AND a.ifcgDelNy = 0 -->
 			AND a.ifcgSeq = #{ifcgSeq}
 			
-			<!-- selectOne 인데 한개가 아니잖아 병신아 와 이새끼 ㄹㅇ 개패고 싶네-->
+			<!-- selectOne 인데 한개가 아니잖아-->
 		
 	</select>
 	
@@ -61,10 +61,22 @@
 		LEFT JOIN
 			cpcpcp.infrCode b on b.ifcgSeq = a.ifcgSeq
 		WHERE 1=1
-			AND a.ifcgDelNy = 0
+			<!-- AND a.ifcgDelNy = 0 -->
 			AND a.ifcgSeq = #{ifcgSeq}
 		
 	</select>
+	
+	<update id="update">
+		
+		UPDATE 
+			cpcpcp.infrCodeGroup 
+		SET
+			ifcgName = #{ifcgName}
+			,ifcgDelNy = #{ifcgDelNy}
+		WHERE 1=1
+			AND ifcgSeq = #{ifcgSeq}
+	
+	</update>
 	
 	
 </mapper>

@@ -22,3 +22,5 @@
 		</c:forEach>
 	</c:otherwise>
 </c:choose>	 
+<hr>
+<a href="/infra/code/codeGroupList">목록으로</a>

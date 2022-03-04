@@ -49,7 +49,6 @@ public class CodeController {
 	}
 	
 	
-	
 	@RequestMapping(value = "/code/codeGroupView2")
 	public String codeGroupView2(Model model, CodeVo vo) throws Exception {
 
@@ -58,6 +57,42 @@ public class CodeController {
 		model.addAttribute("list", list);
 
 		return "code/codeGroupView2";
+	}
+	
+	@RequestMapping(value = "/code/codeGroupEditForm")
+	public String codeGroupEditForm(Model model, CodeVo vo) throws Exception {
+
+		Code rt = service.selectOne(vo);
+		
+		model.addAttribute("rt", rt);
+		
+		return "code/codeGroupEditForm";
+	}
+	
+//	@RequestMapping(value = "/code/codeGroupUpdt")
+//	public String codeGroupUpdt(Model model, CodeVo vo) throws Exception {
+//
+//		// 업데이트 하는 구문
+//		service.update(vo);
+//		
+//		// View1을 다시 뿌려주기 위한 구문
+//		Code rt = service.selectOne(vo);
+//		model.addAttribute("rt", rt);
+//
+//		return "/code/codeGroupView1";
+//	}
+	
+	@RequestMapping(value = "/code/codeGroupUpdt")		// SelectOne(Code dto) 새로 생성
+	public String codeGroupUpdt(Model model, Code dto) throws Exception {
+
+		// 업데이트 하는 구문
+		service.update(dto);
+		
+		// View1을 다시 뿌려주기 위한 구문
+		Code rt = service.selectOne(dto);
+		model.addAttribute("rt", rt);
+		
+		return "code/codeGroupView1";
 	}
 
 }
