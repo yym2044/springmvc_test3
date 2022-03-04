@@ -37,7 +37,19 @@ public class CodeController {
 
 		return "";
 	}
-
+	
+	@RequestMapping(value = "/code/codeGroupView1")
+	public String codeGroupView1(Model model, CodeVo vo) throws Exception {
+		
+		Code rt = service.selectOne(vo);
+		
+		model.addAttribute("rt", rt);
+		
+		return "code/codeGroupView1";
+	}
+	
+	
+	
 	@RequestMapping(value = "/code/codeGroupView2")
 	public String codeGroupView2(Model model, CodeVo vo) throws Exception {
 
