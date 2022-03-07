@@ -91,7 +91,7 @@ public class CodeController {
 		Code rt = service.selectOne(dto);
 		model.addAttribute("rt", rt);
 
-		return "code/codeGroupView1";
+		return "code/codeGroupView1" ;
 
 	}
 

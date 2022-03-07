@@ -6,9 +6,9 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 
-<form method="post" action="/infra/code/codeGroupUpdt?ifcgSeq=${rt.ifcgSeq}">
-	<input type="text" name="ifcgSeq" placeholder="ifcgSeq를 입력" value = "${rt.ifcgSeq}" disabled>
-	<input type="text" name="ifcgName" placeholder="ifcgName를 입력" value = "${rt.ifcgName}">
+<form method="post" action="/infra/code/codeGroupUpdt">
+	<input type="text" name="ifcgSeq" placeholder="ifcgSeq를 입력" value = "${rt.ifcgSeq}">
+	<input type="text" name="ifcgName" placeholder="ifcgName를 입력" value = "<c:out value="${rt.ifcgName}"/>">
 	<input type="text" name="ifcgDelNy" placeholder="ifcgDelNy를 입력" value = "${rt.ifcgDelNy}">
 	<input type="submit" value="수정">
 </form>
