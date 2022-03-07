@@ -94,5 +94,51 @@ public class CodeController {
 		return "code/codeGroupView1" ;
 
 	}
+	
+//	코드
+	
+	@RequestMapping(value = "/code/codeList")
+	public String codeList(Model model) throws Exception {
 
+		List<Code> list = service.selectList_code();
+
+		model.addAttribute("list", list);
+
+		return "code/codeList";
+	}
+
+	@RequestMapping(value = "/code/codeForm")
+	public String codeForm() throws Exception {
+
+		return "code/codeForm";
+	}
+
+	@RequestMapping(value = "/code/codeInst")
+	public String codeInst(Model model, Code dto) throws Exception {
+
+		// 입력이 되어야 함
+		service.insert_code(dto);
+
+		return "";
+	}
+	
+	@RequestMapping(value = "/code/codeView")
+	public String codeView(Model model, CodeVo vo) throws Exception {
+
+		Code rt = service.selectOne_code(vo);
+
+		model.addAttribute("rt", rt);
+
+		return "code/codeView";
+	}
+	
+	@RequestMapping(value = "/code/codeEditForm")
+	public String codeEditForm(Model model, CodeVo vo) throws Exception {
+
+		Code rt = service.selectOne_code(vo);
+
+		model.addAttribute("rt", rt);
+
+		return "code/codeEditForm";
+	}
 }

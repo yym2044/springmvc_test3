@@ -78,5 +78,63 @@
 	
 	</update>
 	
+	<!-- 코드 -->
+	
+	<select id="selectList_code" resultMap="resultMapObj">
+		
+		SELECT 
+			a.ifcgSeq
+			, a.ifcdSeq
+			, a.ifcdName
+			, a.ifcdDelNy
+		FROM 
+			cpcpcp.infrCode a
+		WHERE 1=1
+			<!-- AND a.ifcgDelNy = 0 -->
+		
+	</select>
+	
+	<insert id="insert_code">
+		INSERT INTO
+		infrCode (
+			ifcgSeq
+			,ifcdName
+			,ifcdDelNy
+		)
+		VALUES (
+			#{ifcgSeq}
+			,#{ifcdName}
+			,0
+		)
+	</insert>
+	
+	<select id="selectOne_code" resultMap="resultMapObj">
+		
+		SELECT 
+			a.ifcgSeq
+			, a.ifcdSeq
+			, a.ifcdName
+			, a.ifcdDelNy
+		FROM 
+			cpcpcp.infrCode a
+		WHERE 1=1
+			<!-- AND a.ifcgDelNy = 0 -->
+			AND a.ifcdSeq = #{ifcdSeq}
+			
+			<!-- selectOne 인데 한개가 아니잖아-->
+		
+	</select>
+	
+	<update id="update_code">
+	
+		UPDATE
+			infrCode
+		SET
+			ifcdName = #{ifcdName}
+		WHERE
+			1=1
+			AND ifcdSeq = #{ifcdSeq}
+			
+	</update>
 	
 </mapper>

@@ -8,6 +8,7 @@ public class Code {
 	private String ifcdSeq;
 	private String ifcdName;
 	private Integer ifcgDelNy;
+	private Integer ifcdDelNy;
 	
 //------------
 	public String getIfcgSeq() {
@@ -36,6 +37,12 @@ public class Code {
 	}
 	public Integer getIfcgDelNy() {
 		return ifcgDelNy;
+	}
+	public Integer getIfcdDelNy() {
+		return ifcdDelNy;
+	}
+	public void setIfcdDelNy(Integer ifcdDelNy) {
+		this.ifcdDelNy = ifcdDelNy;
 	}
 	public void setIfcgDelNy(Integer ifcgDelNy) {
 		this.ifcgDelNy = ifcgDelNy;
