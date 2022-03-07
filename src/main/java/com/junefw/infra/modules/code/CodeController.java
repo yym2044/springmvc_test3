@@ -141,4 +141,18 @@ public class CodeController {
 
 		return "code/codeEditForm";
 	}
+	
+	@RequestMapping(value = "/code/codeUpdt") // SelectOne(Code dto) 새로 생성
+	public String codeUpdt(Model model, Code dto) throws Exception {
+
+		// 업데이트 하는 구문
+		service.update_code(dto);
+
+//		// View을 다시 뿌려주기 위한 구문
+		Code rt = service.selectOne_code(dto);
+		model.addAttribute("rt", rt);
+
+		return "/code/codeView" ;
+
+	}
 }

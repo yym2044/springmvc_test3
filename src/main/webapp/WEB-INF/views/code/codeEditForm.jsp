@@ -6,8 +6,8 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 
-
-
-<c:out value="${rt.ifcgSeq}"/> | <c:out value="${rt.ifcdSeq}"/> | <c:out value="${rt.ifcdName}"/> | <c:out value="${rt.ifcdDelNy}"/>
-<hr>
-<a href="/infra/code/codeEditForm?ifcdSeq=${rt.ifcdSeq}">수정하기</a>
+<form method="post" action="/infra/code/codeUpdt">
+	<input type="hidden" name="ifcdSeq" value = "<c:out value="${rt.ifcdSeq}"/>">
+	<input type="text" name="ifcdName" placeholder="ifcdName을 입력" value = "<c:out value="${rt.ifcdName}"/>">
+	<input type="submit" value="수정">
+</form>

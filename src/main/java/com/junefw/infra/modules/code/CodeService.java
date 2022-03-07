@@ -19,6 +19,7 @@ public interface CodeService {
 	public int insert_code(Code dto) throws Exception;
 	
 	public Code selectOne_code(CodeVo vo) throws Exception;
+	public Code selectOne_code(Code dto) throws Exception;
 	
 	public int update_code(Code dto) throws Exception;
 }

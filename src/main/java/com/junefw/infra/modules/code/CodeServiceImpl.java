@@ -68,6 +68,11 @@ public class CodeServiceImpl implements CodeService{
 	}
 	
 	@Override
+	public Code selectOne_code(Code dto) throws Exception {
+		return dao.selectOne_code(dto);
+	}
+	
+	@Override
 	public int update_code(Code dto) throws Exception {
 		return dao.update_code(dto);
 	}
