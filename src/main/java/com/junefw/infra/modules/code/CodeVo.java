@@ -2,7 +2,7 @@ package com.junefw.infra.modules.code;
 
 public class CodeVo {
 	
-//	DTO
+//	VO
 	private String ifcgSeq;
 
 //------------
