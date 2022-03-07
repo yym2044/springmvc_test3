@@ -6,8 +6,10 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 
-<form method="post" action="/infra/code/codeUpdt">
-	<input type="hidden" name="ifcdSeq" placeholder="ifcdSeq" value = "${rt.ifcdSeq}">
-	<input type="text" name="ifcdName" placeholder="ifcdName" value = "${rt.ifcdName}">
+<form method="post" action="/infra/code/codeInst">
+	<input type="text" name="ifcgSeq" placeholder="ifcgSeq">
+	<input type="text" name="ifcdName" placeholder="ifcdName">
+	<input type="text" name="ifcdDelNy" placeholder="ifcdDelNy">
 	<input type="submit" value="제출">
 </form>
+
