@@ -18,7 +18,11 @@
 			, a.ifmmDob
 			, a.ifmmFavoriteColor
 			, a.ifmmDelNy
-		FROM infrMember a;
+			, (select ifcdName from infrCode where ifcdSeq = a.ifmmGradeCd) as ifmmGrade
+			, a.ifmmRegDate
+			, (select ifcdName from infrCode where ifcdSeq = a.ifmmStatusCd) as ifmmStatus
+		FROM infrMember a
+		
 	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">
@@ -30,7 +34,17 @@
 			, a.ifmmDob
 			, a.ifmmFavoriteColor
 			, a.ifmmDelNy
+			, (select ifcdName from infrCode where ifcdSeq = a.ifmmGradeCd) as ifmmGrade
+			, a.ifmmRegDate
+			, (select ifcdName from infrCode where ifcdSeq = a.ifmmStatusCd) as ifmmStatus
+			, if(a.ifmmEmailConsentNy=1,'수신동의','수신거부') as ifmmEmailConsentNyText
+			, if(a.ifmmSmsConsentNy=1,'수신동의','수신거부') as ifmmSmsConsentNyText
+			, if(a.ifmmPushConsentNy=1,'수신동의','수신거부') as ifmmPushConsentNyText
+			
+			
+			, b.ifmeEmailFull
 		FROM infrMember a
+		LEFT JOIN infrMemberEmail b ON b.ifmmSeq = a.ifmmSeq AND b.ifmeDefaultNy = 1
 		WHERE
 			1=1
 		AND a.ifmmSeq = #{ifmmSeq}

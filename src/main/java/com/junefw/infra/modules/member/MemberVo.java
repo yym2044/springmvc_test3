@@ -2,7 +2,7 @@ package com.junefw.infra.modules.member;
 
 public class MemberVo {
 	
-	private String ifmmSeq = "";
+	private String ifmmSeq;
 //------------
 	public String getIfmmSeq() {
 		return ifmmSeq;

@@ -24,6 +24,6 @@ public class MemberDao {
 		return sqlSession.insert(namespace + ".insert", dto);
 	}
 	
-	public Member selectOne(MemberVo vo) {return sqlSession.selectOne(namespace + ".selectOne", "vo");}
+	public Member selectOne(MemberVo vo) {return sqlSession.selectOne(namespace + ".selectOne", vo);}
 	
 }

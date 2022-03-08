@@ -439,33 +439,31 @@
 	
 	<c:otherwise>
 
-		<table class="table border border-1 box-white container1" style="min-width: 1000px; border-collapse: separate;">
+		<table class="table table-sm border border-1 box-white container1" style="min-width: 1000px; border-collapse: separate;">
 			<tr>
 				<th><input type="checkbox" name="checkbox1" onclick="selectAll1(this)" class="form-check-input"></th>
-				<th>ifmmSeq</th>
-				<th>이름</th>
+				<th>번호</th>
 				<th>아이디</th>
-				<th>성별</th>
-				<th>생일</th>
-				<th>색</th>
-				<th>ifmmDelNy</th>
+				<th>이름</th>
+				<th>회원등급</th>
+				<th>상태</th>
+				<th>가입일</th>
 				<th>관리</th>
 			</tr>
 			<c:forEach items="${list}" var="item" varStatus="status">
 				<tr>
 					<td><input type="checkbox" name="checkbox1" class="form-check-input"></td>
-					<td><c:out value="${item.ifmmSeq}" /></td>
-					<td><c:out value="${item.ifmmName}"/></td>					
+					<td><c:out value="${item.ifmmSeq}"/></td>					
 					<td><c:out value="${item.ifmmId}"/></td>					
-					<td><c:out value="${item.ifmmGenderName}"/></td>					
-					<td><c:out value="${item.ifmmDob}"/></td>					
-					<td><c:out value="${item.ifmmFavoriteColor}"/></td>					
-					<td><c:out value="${item.ifmmDelNy}"/></td>		
+					<td><c:out value="${item.ifmmName}"/></td>					
+					<td><c:out value="${item.ifmmGrade}" /></td>
+					<td><c:out value="${item.ifmmStatus}"/></td>					
+					<td><c:out value="${item.ifmmRegDate}"/></td>					
 					<td>
 						<div class="d-flex justify-content-center align-items-center">
 							<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-chat-right-dots"></i></a> 
 							<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-envelope"></i></a> 
-							<a href="/infra/member/memberView?ifmmSeq=${item.ifmmSeq}" class="btn btn-sm btn-outline-dark py-0"<%--  onclick="window.open('memberView?ifmmSeq=${item.ifmmSeq}','name','resizable=no width=1000 height=500');return false" --%>>관리</a>
+							<a href="/infra/member/memberView?ifmmSeq=${item.ifmmSeq}" class="btn btn-sm btn-outline-dark py-0" onclick="window.open('memberView?ifmmSeq=${item.ifmmSeq}','name','resizable=no width=1000 height=500');return false">관리</a>
 						</div>
 					</td>			
 				<tr>

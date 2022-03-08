@@ -2,14 +2,21 @@ package com.junefw.infra.modules.member;
 
 public class Member {
 	
-	private String ifmmSeq = "";
-	private String ifmmId = "";
-	private String ifmmName= "";
+	private String ifmmSeq;
+	private String ifmmId;
+	private String ifmmName;
 	private String ifmmGenderName;
 	private String ifmmDob;
 	private String ifmmFavoriteColor;
+	private String ifmmGrade;
 	private Integer ifmmDelNy;
-//------------
+	private String ifmeEmailFull;
+	private String ifmmRegDate;
+	private String ifmmStatus;
+	private String ifmmEmailConsentNyText;
+	private String ifmmSMSConsentNyText;
+	private String ifmmPushConsentNyText;
+	//------------
 	public String getIfmmSeq() {
 		return ifmmSeq;
 	}
@@ -52,5 +59,47 @@ public class Member {
 	public void setIfmmFavoriteColor(String ifmmFavoriteColor) {
 		this.ifmmFavoriteColor = ifmmFavoriteColor;
 	}
-
+	public String getIfmeEmailFull() {
+		return ifmeEmailFull;
+	}
+	public void setIfmeEmailFull(String ifmeEmailFull) {
+		this.ifmeEmailFull = ifmeEmailFull;
+	}
+	public String getIfmmGrade() {
+		return ifmmGrade;
+	}
+	public void setIfmmGrade(String ifmmGrade) {
+		this.ifmmGrade = ifmmGrade;
+	}
+	public String getIfmmRegDate() {
+		return ifmmRegDate;
+	}
+	public void setIfmmRegDate(String ifmmRegDate) {
+		this.ifmmRegDate = ifmmRegDate;
+	}
+	public String getIfmmStatus() {
+		return ifmmStatus;
+	}
+	public void setIfmmStatus(String ifmmStatus) {
+		this.ifmmStatus = ifmmStatus;
+	}
+	public String getIfmmEmailConsentNyText() {
+		return ifmmEmailConsentNyText;
+	}
+	public void setIfmmEmailConsentNyText(String ifmmEmailConsentNyText) {
+		this.ifmmEmailConsentNyText = ifmmEmailConsentNyText;
+	}
+	public String getIfmmSMSConsentNyText() {
+		return ifmmSMSConsentNyText;
+	}
+	public void setIfmmSMSConsentNyText(String ifmmSMSConsentNyText) {
+		this.ifmmSMSConsentNyText = ifmmSMSConsentNyText;
+	}
+	public String getIfmmPushConsentNyText() {
+		return ifmmPushConsentNyText;
+	}
+	public void setIfmmPushConsentNyText(String ifmmPushConsentNyText) {
+		this.ifmmPushConsentNyText = ifmmPushConsentNyText;
+	}
+	
 }
