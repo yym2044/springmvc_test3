@@ -9,6 +9,7 @@ public class Code {
 	private String ifcdName;
 	private Integer ifcgDelNy;
 	private Integer ifcdDelNy;
+	private Integer ifcdOrder;
 	
 //------------
 	public String getIfcgSeq() {
@@ -31,6 +32,12 @@ public class Code {
 	}
 	public String getIfcdName() {
 		return ifcdName;
+	}
+	public Integer getIfcdOrder() {
+		return ifcdOrder;
+	}
+	public void setIfcdOrder(Integer ifcdOrder) {
+		this.ifcdOrder = ifcdOrder;
 	}
 	public void setIfcdName(String ifcdName) {
 		this.ifcdName = ifcdName;

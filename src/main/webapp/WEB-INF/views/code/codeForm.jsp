@@ -7,7 +7,8 @@
 
 
 <form method="post" action="/infra/code/codeInst">
-	<input type="text" name="ifcgSeq" placeholder="ifcgSeq">
+	<input type="hidden" name="ifcgSeq" placeholder="ifcgSeq">
+	<input type="text" name="ifcdOrder" placeholder="ifcdOrder">
 	<input type="text" name="ifcdName" placeholder="ifcdName">
 	<input type="text" name="ifcdDelNy" placeholder="ifcdDelNy">
 	<input type="submit" value="제출">

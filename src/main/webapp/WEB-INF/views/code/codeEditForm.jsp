@@ -8,6 +8,7 @@
 
 <form method="post" action="/infra/code/codeUpdt">
 	<input type="hidden" name="ifcdSeq" value = "<c:out value="${rt.ifcdSeq}"/>">
+	<input type="text" name="ifcdOrder" placeholder="ifcdOrder를 입력" value = "<c:out value="${rt.ifcdOrder}"/>">
 	<input type="text" name="ifcdName" placeholder="ifcdName을 입력" value = "<c:out value="${rt.ifcdName}"/>">
 	<input type="submit" value="수정">
 </form>

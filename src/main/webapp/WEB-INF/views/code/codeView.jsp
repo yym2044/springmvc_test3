@@ -8,6 +8,8 @@
 
 
 
-<c:out value="${rt.ifcgSeq}"/> | <c:out value="${rt.ifcdSeq}"/> | <c:out value="${rt.ifcdName}"/> | <c:out value="${rt.ifcdDelNy}"/>
+<c:out value="Group ${rt.ifcgSeq}"/> | <c:out value="${rt.ifcdOrder}"/> | <c:out value="${rt.ifcdName}"/> | <c:out value="${rt.ifcdDelNy}"/>
 <hr>
-<a href="/infra/code/codeEditForm?ifcdSeq=${rt.ifcdSeq}">수정하기</a>
+<a href="/infra/code/codeEditForm?ifcdSeq=${rt.ifcdSeq}" style="text-decoration: none">수정하기</a>
+<a href="/infra/code/codeList" style="text-decoration: none">목록</a>
+
