@@ -10,6 +10,7 @@
 
 <c:out value="Group ${rt.ifcgSeq}"/> | <c:out value="${rt.ifcdOrder}"/> | <c:out value="${rt.ifcdName}"/> | <c:out value="${rt.ifcdDelNy}"/>
 <hr>
-<a href="/infra/code/codeEditForm?ifcdSeq=${rt.ifcdSeq}" style="text-decoration: none">수정하기</a>
+<a href="/infra/code/codeEditForm?ifcdSeq=${rt.ifcdSeq}" style="text-decoration: none; color: green">수정하기</a>
 <a href="/infra/code/codeList" style="text-decoration: none">목록</a>
+<a href="/infra/code/codeDele?ifcdSeq=${rt.ifcdSeq}" style="text-decoration: none; color: red">삭제</a>
 

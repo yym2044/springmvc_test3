@@ -22,4 +22,5 @@ public interface CodeService {
 	public Code selectOne_code(Code dto) throws Exception;
 	
 	public int update_code(Code dto) throws Exception;
+	public int delete_code(CodeVo vo) throws Exception;
 }

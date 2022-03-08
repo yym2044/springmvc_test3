@@ -145,4 +145,14 @@
 			
 	</update>
 	
+	<delete id="delete_code">
+		
+		DELETE FROM
+			infrCode
+		WHERE
+			1=1
+			AND ifcdSeq = #{ifcdSeq}
+	
+	</delete>
+	
 </mapper>

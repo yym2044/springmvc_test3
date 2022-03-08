@@ -76,4 +76,9 @@ public class CodeServiceImpl implements CodeService{
 	public int update_code(Code dto) throws Exception {
 		return dao.update_code(dto);
 	}
+
+	@Override
+	public int delete_code(CodeVo vo) throws Exception {
+		return dao.delete_code(vo);
+	}
 }

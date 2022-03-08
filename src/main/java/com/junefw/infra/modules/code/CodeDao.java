@@ -37,4 +37,6 @@ public class CodeDao {
 	public Code selectOne_code(Code dto) {return sqlSession.selectOne(namespace + ".selectOne_code", dto);}
 	
 	public int update_code(Code dto) {return sqlSession.update(namespace + ".update_code", dto);}
+	
+	public int delete_code(CodeVo vo) {return sqlSession.delete(namespace + ".delete_code", vo);}
 }

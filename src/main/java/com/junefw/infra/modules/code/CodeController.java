@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-//@RequestMapping(value = "/code/")			17번 라인 대신 11번 라인 + 18번 라인으로도 가능
+//@RequestMapping(value = "/code/")			17번 라인 대신 (11번 라인 + 18번 라인)으로도 가능
 public class CodeController {
 
 	@Autowired
@@ -117,6 +117,7 @@ public class CodeController {
 
 		model.addAttribute("list", list);
 		
+		
 		return "code/codeForm";
 	}
 
@@ -161,5 +162,19 @@ public class CodeController {
 
 		return "/code/codeView" ;
 
+	}
+	
+	@RequestMapping(value = "/code/codeDele")
+	public String codeDele(Model model, CodeVo vo) throws Exception {
+		
+		// 업데이트 하는 구문
+		service.delete_code(vo);
+		
+//		// List를 다시 뿌려주기 위한 구문
+		List<Code> list = service.selectList_code();
+		model.addAttribute("list", list);
+		
+		return "/code/codeList" ;
+		
 	}
 }

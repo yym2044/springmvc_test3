@@ -5,6 +5,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<a href="/infra/code/codeForm" style="text-decoration: none;">등록하기</a>
+<a href="/infra/code/codeGroupList" style="text-decoration: none;">그룹보기</a>
+
+<hr>
+
 <c:choose>
 	<c:when test="${fn:length(list) eq 0}">
 		<tr>
