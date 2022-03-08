@@ -8,12 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+//@RequestMapping(value = "/code/")			17번 라인 대신 11번 라인 + 18번 라인으로도 가능
 public class CodeController {
 
 	@Autowired
 	CodeServiceImpl service;
 
 	@RequestMapping(value = "/code/codeGroupList")
+//	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(Model model) throws Exception {
 
 		List<Code> list = service.selectList();
@@ -108,8 +110,13 @@ public class CodeController {
 	}
 
 	@RequestMapping(value = "/code/codeForm")
-	public String codeForm() throws Exception {
+	public String codeForm(Model model) throws Exception {
 
+		//ifcgSeq 정보를 가져오기 위해
+		List<Code> list = service.selectList();
+
+		model.addAttribute("list", list);
+		
 		return "code/codeForm";
 	}
 
