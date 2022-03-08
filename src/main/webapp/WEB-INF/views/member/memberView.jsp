@@ -47,7 +47,7 @@
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">이메일</td>
-					<td class="text-start"><c:out value="${rt.ifmeEmailFull}"/><span class="badge bg-dark ms-1"><c:out value="${rt.ifmmEmailConsentNyText}"/></span></td>
+					<td class="text-start"><c:out value="${rt.ifmeEmailFull}"/><span class="badge bg-secondary ms-1"><c:out value="${rt.ifmmEmailConsentNyText}"/></span></td>
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">회원등급</td>
@@ -59,11 +59,11 @@
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">휴대폰</td>
-					<td class="text-start">010-1234-5678<span class="badge bg-dark ms-1"><c:out value="${rt.ifmmSMSConsentNyText}"/></span></td>
+					<td class="text-start"><c:out value="${rt.ifmpNumberMobile}"/><span class="badge bg-secondary ms-1"><c:out value="${rt.ifmmSMSConsentNyText}"/></span></td>
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">전화번호</td>
-					<td class="text-start">02-123-4567</td>
+					<td class="text-start"><c:out value="${rt.ifmpNumberHome}"/></td>
 				</tr>
 			</table>
 

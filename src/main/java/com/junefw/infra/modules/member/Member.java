@@ -16,6 +16,8 @@ public class Member {
 	private String ifmmEmailConsentNyText;
 	private String ifmmSMSConsentNyText;
 	private String ifmmPushConsentNyText;
+	private String ifmpNumberMobile;
+	private String ifmpNumberHome;
 	//------------
 	public String getIfmmSeq() {
 		return ifmmSeq;
@@ -100,6 +102,18 @@ public class Member {
 	}
 	public void setIfmmPushConsentNyText(String ifmmPushConsentNyText) {
 		this.ifmmPushConsentNyText = ifmmPushConsentNyText;
+	}
+	public String getIfmpNumberMobile() {
+		return ifmpNumberMobile;
+	}
+	public void setIfmpNumberMobile(String ifmpNumberMobile) {
+		this.ifmpNumberMobile = ifmpNumberMobile;
+	}
+	public String getIfmpNumberHome() {
+		return ifmpNumberHome;
+	}
+	public void setIfmpNumberHome(String ifmpNumberHome) {
+		this.ifmpNumberHome = ifmpNumberHome;
 	}
 	
 }

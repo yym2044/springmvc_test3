@@ -31,6 +31,7 @@ public class MemberController {
 
 
 		Member rt = service.selectOne(vo);
+				
 		model.addAttribute("rt", rt);
 		
 

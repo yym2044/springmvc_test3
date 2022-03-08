@@ -26,7 +26,7 @@
 	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">
-		SELECT
+		SELECT DISTINCT
 			a.ifmmSeq
 			, a.ifmmName
 			, a.ifmmId
@@ -40,16 +40,20 @@
 			, if(a.ifmmEmailConsentNy=1,'수신동의','수신거부') as ifmmEmailConsentNyText
 			, if(a.ifmmSmsConsentNy=1,'수신동의','수신거부') as ifmmSmsConsentNyText
 			, if(a.ifmmPushConsentNy=1,'수신동의','수신거부') as ifmmPushConsentNyText
-			
-			
+						
 			, b.ifmeEmailFull
+			
+			, (select ifmpNumber from infrMemberPhone where ifmpDeviceCd = 26 and ifmmSeq = #{ifmmSeq}) as ifmpNumberMobile
+			, (select ifmpNumber from infrMemberPhone where ifmpDeviceCd = 25 and  ifmmSeq = #{ifmmSeq}) as ifmpNumberHome
+			
 		FROM infrMember a
 		LEFT JOIN infrMemberEmail b ON b.ifmmSeq = a.ifmmSeq AND b.ifmeDefaultNy = 1
+		LEFT JOIN infrMemberPhone c ON c.ifmmSeq = a.ifmmSeq
 		WHERE
 			1=1
 		AND a.ifmmSeq = #{ifmmSeq}
 	</select>
-
+	
 	<insert id="insert">
 		insert into infrMember (
 			ifmmId
