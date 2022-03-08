@@ -5,6 +5,9 @@ public class Member {
 	private String ifmmSeq = "";
 	private String ifmmId = "";
 	private String ifmmName= "";
+	private String ifmmGenderName;
+	private String ifmmDob;
+	private String ifmmFavoriteColor;
 	private Integer ifmmDelNy;
 //------------
 	public String getIfmmSeq() {
@@ -30,6 +33,24 @@ public class Member {
 	}
 	public void setIfmmName(String ifmmName) {
 		this.ifmmName = ifmmName;
+	}
+	public String getIfmmGenderName() {
+		return ifmmGenderName;
+	}
+	public void setIfmmGenderName(String ifmmGenderName) {
+		this.ifmmGenderName = ifmmGenderName;
+	}
+	public String getIfmmDob() {
+		return ifmmDob;
+	}
+	public void setIfmmDob(String ifmmDob) {
+		this.ifmmDob = ifmmDob;
+	}
+	public String getIfmmFavoriteColor() {
+		return ifmmFavoriteColor;
+	}
+	public void setIfmmFavoriteColor(String ifmmFavoriteColor) {
+		this.ifmmFavoriteColor = ifmmFavoriteColor;
 	}
 
 }

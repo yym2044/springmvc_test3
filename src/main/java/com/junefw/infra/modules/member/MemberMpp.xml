@@ -10,12 +10,15 @@
 		type="com.junefw.infra.modules.member.Member"></resultMap>
 
 	<select id="selectList" resultMap="resultMapObj">
-		select
-			ifmmSeq
-			, ifmmId
-			, ifmmName
-		from
-		infrMember
+		SELECT
+			a.ifmmSeq
+			, a.ifmmName
+			, a.ifmmId
+			, (select ifcdName from infrCode where ifcdSeq = a.ifmmGenderCd) as ifmmGenderName
+			, a.ifmmDob
+			, a.ifmmFavoriteColor
+			, a.ifmmDelNy
+		FROM infrMember a;
 	</select>
 
 	<insert id="insert">
