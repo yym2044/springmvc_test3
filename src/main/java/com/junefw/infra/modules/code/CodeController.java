@@ -125,7 +125,9 @@ public class CodeController {
 	public String codeInst(Model model, Code dto) throws Exception {
 
 		// 입력이 되어야 함
-		service.insert_code(dto);
+		if(dto.getIfcdName()!="" && dto.getIfcdOrder()!=0 && dto.getIfcgDelNy()!=0) {
+			service.insert_code(dto);
+		}
 
 		return "";
 	}
