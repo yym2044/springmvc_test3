@@ -465,7 +465,7 @@
 						<div class="d-flex justify-content-center align-items-center">
 							<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-chat-right-dots"></i></a> 
 							<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-envelope"></i></a> 
-							<a href="#" class="btn btn-sm btn-outline-dark py-0" onclick="window.open('memberView','name','resizable=no width=1000 height=500');return false">관리</a>
+							<a href="/infra/member/memberView?ifmmSeq=${item.ifmmSeq}" class="btn btn-sm btn-outline-dark py-0"<%--  onclick="window.open('memberView?ifmmSeq=${item.ifmmSeq}','name','resizable=no width=1000 height=500');return false" --%>>관리</a>
 						</div>
 					</td>			
 				<tr>

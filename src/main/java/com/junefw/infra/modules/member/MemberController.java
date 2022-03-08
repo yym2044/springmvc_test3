@@ -26,6 +26,17 @@ public class MemberController {
 		return "member/memberList";
 	}
 	
+	@RequestMapping(value = "/member/memberView")
+	public String memberList(Model model, MemberVo vo) throws Exception {
+
+
+		Member rt = service.selectOne(vo);
+		model.addAttribute("rt", rt);
+		
+
+		return "member/memberView";
+	}
+	
 	@RequestMapping(value = "/member/memberForm")
 	public String memberForm(Model model) throws Exception {
 

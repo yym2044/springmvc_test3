@@ -21,6 +21,21 @@
 		FROM infrMember a;
 	</select>
 
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.ifmmSeq
+			, a.ifmmName
+			, a.ifmmId
+			, (select ifcdName from infrCode where ifcdSeq = a.ifmmGenderCd) as ifmmGenderName
+			, a.ifmmDob
+			, a.ifmmFavoriteColor
+			, a.ifmmDelNy
+		FROM infrMember a
+		WHERE
+			1=1
+		AND a.ifmmSeq = #{ifmmSeq}
+	</select>
+
 	<insert id="insert">
 		insert into infrMember (
 			ifmmId
