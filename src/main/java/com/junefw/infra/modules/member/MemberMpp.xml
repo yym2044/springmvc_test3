@@ -24,6 +24,16 @@
 		FROM infrMember a
 		
 	</select>
+	
+	<select id="selectListCode" resultMap="resultMapObj">
+	SELECT 
+		ifcdSeq
+		,ifcdName
+	FROM 
+		infrCode a
+	LEFT JOIN infrCodeGroup b on b.ifcgSeq = a.ifcgSeq
+	WHERE ifcgName LIKE "%등급%"
+	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT DISTINCT
@@ -67,7 +77,6 @@
 			, ifmmPwd
 			, ifmmGenderCd
 			, ifmmDob
-			, ifmmFavoriteColor
 			, ifmmDelNy
 			, ifmmGradeCd
 			, ifmmRegDate
@@ -82,9 +91,8 @@
 			, #{ifmmPwd}
 			, #{ifmmGenderCd}
 			, #{ifmmDob}
-			, #{ifmmFavoriteColor}
 			, 0
-			, 76
+			, #{ifmmGradeCd}
 			, #{ifmmRegDate}
 			, 78
 			, #{ifmmEmailConsentNy}

@@ -477,7 +477,7 @@
 				<div class="row ps-2">
 					<div class="col col-md-4 ms-1 p-0">
 						<a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"> <i class="bi bi-trash"></i>
-						</a> <a class="btn btn-outline-primary" href="./memberForm.html"> <i class="bi bi-plus-square"></i>
+						</a> <a class="btn btn-outline-primary" href="./memberForm" onclick="window.open('memberForm','name','resizable=no width=1000 height=500');return false"> <i class="bi bi-plus-square"></i>
 						</a>
 					</div>
 					<!-- 같은줄 or 따로뺄지 -->

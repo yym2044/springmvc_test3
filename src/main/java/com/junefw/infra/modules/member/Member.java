@@ -2,26 +2,51 @@ package com.junefw.infra.modules.member;
 
 public class Member {
 	
+	//코드
+	private Integer ifcdSeq;
+	private String ifcdName;
+	//멤버
 	private String ifmmSeq;
 	private String ifmmId;
-	private String ifmmpwd;
+	private String ifmmPwd;
 	private String ifmmName;
+	private String ifmmGenderCd;
 	private String ifmmGenderName;
 	private String ifmmDob;
 	private String ifmmFavoriteColor;
+	private Integer ifmmGradeCd;
 	private String ifmmGrade;
 	private Integer ifmmDelNy;
-	private String ifmeEmailFull;
 	private String ifmmRegDate;
+	private Integer ifmmStatusCd;
 	private String ifmmStatus;
+	private Integer ifmmEmailConsentNy;
 	private String ifmmEmailConsentNyText;
-	private String ifmmSMSConsentNyText;
+	private Integer ifmmSmsConsentNy;
+	private String ifmmSmsConsentNyText;
+	private Integer ifmmPushConsentNy;
 	private String ifmmPushConsentNyText;
+	//멤버_이메일
+	private String ifmeEmailFull;
+	//멤버_폰
 	private String ifmpNumberMobile;
 	private String ifmpNumberHome;
+	//멤버_어드레스
 	private String ifmaAddress1;
 	private String ifmaAddress2;
-	//------------
+	//--------------------------------------------------------------
+	public Integer getIfcdSeq() {
+		return ifcdSeq;
+	}
+	public void setIfcdSeq(Integer ifcdSeq) {
+		this.ifcdSeq = ifcdSeq;
+	}
+	public String getIfcdName() {
+		return ifcdName;
+	}
+	public void setIfcdName(String ifcdName) {
+		this.ifcdName = ifcdName;
+	}
 	public String getIfmmSeq() {
 		return ifmmSeq;
 	}
@@ -31,26 +56,26 @@ public class Member {
 	public String getIfmmId() {
 		return ifmmId;
 	}
-	public Integer getIfmmDelNy() {
-		return ifmmDelNy;
-	}
-	public void setIfmmDelNy(Integer ifmmDelNy) {
-		this.ifmmDelNy = ifmmDelNy;
-	}
 	public void setIfmmId(String ifmmId) {
 		this.ifmmId = ifmmId;
 	}
-	public String getIfmmpwd() {
-		return ifmmpwd;
+	public String getIfmmPwd() {
+		return ifmmPwd;
 	}
-	public void setIfmmpwd(String ifmmpwd) {
-		this.ifmmpwd = ifmmpwd;
+	public void setIfmmPwd(String ifmmPwd) {
+		this.ifmmPwd = ifmmPwd;
 	}
 	public String getIfmmName() {
 		return ifmmName;
 	}
 	public void setIfmmName(String ifmmName) {
 		this.ifmmName = ifmmName;
+	}
+	public String getIfmmGenderCd() {
+		return ifmmGenderCd;
+	}
+	public void setIfmmGenderCd(String ifmmGenderCd) {
+		this.ifmmGenderCd = ifmmGenderCd;
 	}
 	public String getIfmmGenderName() {
 		return ifmmGenderName;
@@ -70,11 +95,11 @@ public class Member {
 	public void setIfmmFavoriteColor(String ifmmFavoriteColor) {
 		this.ifmmFavoriteColor = ifmmFavoriteColor;
 	}
-	public String getIfmeEmailFull() {
-		return ifmeEmailFull;
+	public Integer getIfmmGradeCd() {
+		return ifmmGradeCd;
 	}
-	public void setIfmeEmailFull(String ifmeEmailFull) {
-		this.ifmeEmailFull = ifmeEmailFull;
+	public void setIfmmGradeCd(Integer ifmmGradeCd) {
+		this.ifmmGradeCd = ifmmGradeCd;
 	}
 	public String getIfmmGrade() {
 		return ifmmGrade;
@@ -82,11 +107,23 @@ public class Member {
 	public void setIfmmGrade(String ifmmGrade) {
 		this.ifmmGrade = ifmmGrade;
 	}
+	public Integer getIfmmDelNy() {
+		return ifmmDelNy;
+	}
+	public void setIfmmDelNy(Integer ifmmDelNy) {
+		this.ifmmDelNy = ifmmDelNy;
+	}
 	public String getIfmmRegDate() {
 		return ifmmRegDate;
 	}
 	public void setIfmmRegDate(String ifmmRegDate) {
 		this.ifmmRegDate = ifmmRegDate;
+	}
+	public Integer getIfmmStatusCd() {
+		return ifmmStatusCd;
+	}
+	public void setIfmmStatusCd(Integer ifmmStatusCd) {
+		this.ifmmStatusCd = ifmmStatusCd;
 	}
 	public String getIfmmStatus() {
 		return ifmmStatus;
@@ -94,23 +131,47 @@ public class Member {
 	public void setIfmmStatus(String ifmmStatus) {
 		this.ifmmStatus = ifmmStatus;
 	}
+	public Integer getIfmmEmailConsentNy() {
+		return ifmmEmailConsentNy;
+	}
+	public void setIfmmEmailConsentNy(Integer ifmmEmailConsentNy) {
+		this.ifmmEmailConsentNy = ifmmEmailConsentNy;
+	}
 	public String getIfmmEmailConsentNyText() {
 		return ifmmEmailConsentNyText;
 	}
 	public void setIfmmEmailConsentNyText(String ifmmEmailConsentNyText) {
 		this.ifmmEmailConsentNyText = ifmmEmailConsentNyText;
 	}
-	public String getIfmmSMSConsentNyText() {
-		return ifmmSMSConsentNyText;
+	public Integer getIfmmSmsConsentNy() {
+		return ifmmSmsConsentNy;
 	}
-	public void setIfmmSMSConsentNyText(String ifmmSMSConsentNyText) {
-		this.ifmmSMSConsentNyText = ifmmSMSConsentNyText;
+	public void setIfmmSmsConsentNy(Integer ifmmSmsConsentNy) {
+		this.ifmmSmsConsentNy = ifmmSmsConsentNy;
+	}
+	public String getIfmmSmsConsentNyText() {
+		return ifmmSmsConsentNyText;
+	}
+	public void setIfmmSmsConsentNyText(String ifmmSmsConsentNyText) {
+		this.ifmmSmsConsentNyText = ifmmSmsConsentNyText;
+	}
+	public Integer getIfmmPushConsentNy() {
+		return ifmmPushConsentNy;
+	}
+	public void setIfmmPushConsentNy(Integer ifmmPushConsentNy) {
+		this.ifmmPushConsentNy = ifmmPushConsentNy;
 	}
 	public String getIfmmPushConsentNyText() {
 		return ifmmPushConsentNyText;
 	}
 	public void setIfmmPushConsentNyText(String ifmmPushConsentNyText) {
 		this.ifmmPushConsentNyText = ifmmPushConsentNyText;
+	}
+	public String getIfmeEmailFull() {
+		return ifmeEmailFull;
+	}
+	public void setIfmeEmailFull(String ifmeEmailFull) {
+		this.ifmeEmailFull = ifmeEmailFull;
 	}
 	public String getIfmpNumberMobile() {
 		return ifmpNumberMobile;

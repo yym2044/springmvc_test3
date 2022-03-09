@@ -40,21 +40,24 @@ public class MemberController {
 	
 	@RequestMapping(value = "/member/memberForm")
 	public String memberForm(Model model) throws Exception {
-
+		
+		//멤버수 가져오기 -> ${fn:length(list2)+1}로 다음 ifmmSeq값을 얻음
+		List<Member> list2 = service.selectList();
+		model.addAttribute("list2", list2);
+		
+		//코드값 가져오기
+		List<Member> list = service.selectListCode();
+		model.addAttribute("list", list);
+		
 		return "member/memberForm";
 	}
 	
 	@RequestMapping(value = "/member/memberInst")
 	public String memberInst(Model model, Member dto) throws Exception {
-		
-		System.out.println("dto.getIfmmId(): " + dto.getIfmmId());
-		System.out.println("dto.getIfmmName(): " + dto.getIfmmName());
 
 		// 입력을 작동시킨다.
-		int result = service.insert(dto);
+		service.insert(dto);
 		
-		System.out.println("result: " + result);
-
 		return "";
 	}
 	
