@@ -20,7 +20,7 @@
 </head>
 <body>
 
-	<form>
+	<form method="post" action="/infra/member/memberInst">
 		
 		<!-- ifmmSeq -->
 		<input type="hidden" name="ifmmSeq" value="${fn:length(list2)+1}">
@@ -170,7 +170,7 @@
 			</div>
 
 			<div class="text-center">
-				<a href="/infra/member/memberInst" class="btn btn-sm btn-outline-success border border-3 container1">등록</a>
+				<input type="submit" class="btn btn-sm btn-outline-success border border-3 container1" value="등록">
 				<button type="button" class="btn btn-sm btn-outline-dark border border-3 container1" onClick="window.close()">취소</button>
 			</div>
 

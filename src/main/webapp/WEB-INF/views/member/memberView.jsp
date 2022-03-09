@@ -59,7 +59,7 @@
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">휴대폰</td>
-					<td class="text-start"><c:out value="${rt.ifmpNumberMobile}"/><span class="badge bg-secondary ms-1"><c:out value="${rt.ifmmSMSConsentNyText}"/></span></td>
+					<td class="text-start"><c:out value="${rt.ifmpNumberMobile}"/><span class="badge bg-secondary ms-1"><c:out value="${rt.ifmmSmsConsentNyText}"/></span></td>
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">전화번호</td>
