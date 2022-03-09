@@ -38,7 +38,7 @@
 			<table class="table" style="border-collapse: collapse;">
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">아이디</td>
-					<td class="text-start"><input type="text" class="form-control" style="width:50%;"><span class="ms-2"><a href="#" class="fs-6"
+					<td class="text-start"><input type="text" class="" style="width:50%;"><span class="ms-2"><a href="#" class="fs-6"
 							style="text-decoration: none;">아이디 중복체크</a></span></td>
 				</tr>
 				<tr>
