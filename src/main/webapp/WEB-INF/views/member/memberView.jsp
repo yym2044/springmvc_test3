@@ -55,7 +55,7 @@
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">주소</td>
-					<td class="text-start">경기도 남양주시</td>
+					<td class="text-start"><c:out value="${rt.ifmaAddress1} ${rt.ifmaAddress2}"/></td>
 				</tr>
 				<tr>
 					<td style="width: 200px;" class="bg-light text-start">휴대폰</td>

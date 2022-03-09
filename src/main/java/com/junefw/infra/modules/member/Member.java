@@ -4,6 +4,7 @@ public class Member {
 	
 	private String ifmmSeq;
 	private String ifmmId;
+	private String ifmmpwd;
 	private String ifmmName;
 	private String ifmmGenderName;
 	private String ifmmDob;
@@ -18,6 +19,8 @@ public class Member {
 	private String ifmmPushConsentNyText;
 	private String ifmpNumberMobile;
 	private String ifmpNumberHome;
+	private String ifmaAddress1;
+	private String ifmaAddress2;
 	//------------
 	public String getIfmmSeq() {
 		return ifmmSeq;
@@ -36,6 +39,12 @@ public class Member {
 	}
 	public void setIfmmId(String ifmmId) {
 		this.ifmmId = ifmmId;
+	}
+	public String getIfmmpwd() {
+		return ifmmpwd;
+	}
+	public void setIfmmpwd(String ifmmpwd) {
+		this.ifmmpwd = ifmmpwd;
 	}
 	public String getIfmmName() {
 		return ifmmName;
@@ -114,6 +123,18 @@ public class Member {
 	}
 	public void setIfmpNumberHome(String ifmpNumberHome) {
 		this.ifmpNumberHome = ifmpNumberHome;
+	}
+	public String getIfmaAddress1() {
+		return ifmaAddress1;
+	}
+	public void setIfmaAddress1(String ifmaAddress1) {
+		this.ifmaAddress1 = ifmaAddress1;
+	}
+	public String getIfmaAddress2() {
+		return ifmaAddress2;
+	}
+	public void setIfmaAddress2(String ifmaAddress2) {
+		this.ifmaAddress2 = ifmaAddress2;
 	}
 	
 }

@@ -46,23 +46,51 @@
 			, (select ifmpNumber from infrMemberPhone where ifmpDeviceCd = 26 and ifmmSeq = #{ifmmSeq}) as ifmpNumberMobile
 			, (select ifmpNumber from infrMemberPhone where ifmpDeviceCd = 25 and  ifmmSeq = #{ifmmSeq}) as ifmpNumberHome
 			
+			, d.ifmaAddress1
+			, d.ifmaAddress2
+			
 		FROM infrMember a
 		LEFT JOIN infrMemberEmail b ON b.ifmmSeq = a.ifmmSeq AND b.ifmeDefaultNy = 1
 		LEFT JOIN infrMemberPhone c ON c.ifmmSeq = a.ifmmSeq
+		LEFT JOIN infrMemberAddress d ON d.ifmmSeq = a.ifmmSeq AND d.ifmaDefaultNy = 1
 		WHERE
 			1=1
 		AND a.ifmmSeq = #{ifmmSeq}
 	</select>
 	
 	<insert id="insert">
-		insert into infrMember (
-			ifmmId
-			,ifmmName
-			,ifmmDelNy
-		) values (
-			#{ifmmId}
-			,#{ifmmName}
-			,0
+		INSERT INTO
+		infrMember (
+			ifmmSeq
+			, ifmmName
+			, ifmmId
+			, ifmmPwd
+			, ifmmGenderCd
+			, ifmmDob
+			, ifmmFavoriteColor
+			, ifmmDelNy
+			, ifmmGradeCd
+			, ifmmRegDate
+			, ifmmStatusCd
+			, ifmmEmailConsentNy
+			, ifmmSmsConsentNy
+			, ifmmPushConsentNy
+		) VALUES (
+			#{ifmmSeq}
+			, #{ifmmName}
+			, #{ifmmId}
+			, #{ifmmPwd}
+			, #{ifmmGenderCd}
+			, #{ifmmDob}
+			, #{ifmmFavoriteColor}
+			, 0
+			, 76
+			, #{ifmmRegDate}
+			, 78
+			, #{ifmmEmailConsentNy}
+			, #{ifmmSmsConsentNy}
+			, #{ifmmPushConsentNy}
 		)
+			
 	</insert>
 </mapper>
