@@ -68,37 +68,66 @@
 		AND a.ifmmSeq = #{ifmmSeq}
 	</select>
 	
-	<insert id="insert">
-		INSERT INTO
-		infrMember (
-			ifmmSeq
-			, ifmmName
-			, ifmmId
-			, ifmmPwd
-			, ifmmGenderCd
-			, ifmmDob
-			, ifmmDelNy
-			, ifmmGradeCd
-			, ifmmRegDate
-			, ifmmStatusCd
-			, ifmmEmailConsentNy
-			, ifmmSmsConsentNy
-			, ifmmPushConsentNy
-		) VALUES (
-			#{ifmmSeq}
-			, #{ifmmName}
-			, #{ifmmId}
-			, #{ifmmPwd}
-			, #{ifmmGenderCd}
-			, #{ifmmDob}
-			, 0
-			, #{ifmmGradeCd}
-			, #{ifmmRegDate}
-			, 78
-			, #{ifmmEmailConsentNy}
-			, #{ifmmSmsConsentNy}
-			, #{ifmmPushConsentNy}
-		)
+	<insert id="insertMember">
+	INSERT INTO
+	infrMember (
+		ifmmSeq
+		, ifmmName
+		, ifmmId
+		, ifmmPwd
+		, ifmmGenderCd
+		, ifmmDob
+		, ifmmDelNy
+		, ifmmGradeCd
+		, ifmmRegDate
+		, ifmmStatusCd
+		, ifmmEmailConsentNy
+		, ifmmSmsConsentNy
+		, ifmmPushConsentNy
+	) VALUES (
+		#{ifmmSeq}
+		, #{ifmmName}
+		, #{ifmmId}
+		, #{ifmmPwd}
+		, #{ifmmGenderCd}
+		, #{ifmmDob}
+		, 0
+		, #{ifmmGradeCd}
+		, #{ifmmRegDate}
+		, 78
+		, #{ifmmEmailConsentNy}
+		, #{ifmmSmsConsentNy}
+		, #{ifmmPushConsentNy}
+	);
 			
 	</insert>
+	<insert id="insertMemberEmail">
+	INSERT INTO
+	infrMemberEmail (
+		ifmmSeq
+		, ifmeEmailFull
+		, ifmeDefaultNy
+	) VALUES (
+		#{ifmmSeq}
+		, #{ifmeEmailFull}
+		, 1
+	)
+	</insert>
+	<insert id="insertMemberAddress">
+	INSERT INTO
+	infrMemberAddress (
+		ifmmSeq
+		, ifmaZipCode
+		, ifmaAddress1
+		, ifmaAddress2
+        , ifmaDefaultNy
+	) VALUES (
+		#{ifmmSeq}
+		, #{ifmaZipCode}
+		, #{ifmaAddress1}
+		, #{ifmaAddress2}
+        , 1
+	);
+	</insert>
+	
 </mapper>

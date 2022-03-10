@@ -22,9 +22,9 @@ public class MemberDao {
 	
 	public List<Member> selectListCode() {return sqlSession.selectList(namespace + ".selectListCode", ""); }
 	
-	public int insert(Member dto){ 
-		return sqlSession.insert(namespace + ".insert", dto);
-	}
+	public int insertMember(Member dto){ return sqlSession.insert(namespace + ".insertMember", dto); }
+	public int insertMemberEmail(Member dto) {return sqlSession.insert(namespace + ".insertMemberEmail", dto);}
+	public int insertMemberAddress(Member dto) {return sqlSession.insert(namespace + ".insertMemberAddress", dto);}
 	
 	public Member selectOne(MemberVo vo) {return sqlSession.selectOne(namespace + ".selectOne", vo);}
 	

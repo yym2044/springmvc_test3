@@ -56,7 +56,9 @@ public class MemberController {
 	public String memberInst(Model model, Member dto) throws Exception {
 
 		// 입력을 작동시킨다.
-		service.insert(dto);
+		service.insertMember(dto);
+		service.insertMemberEmail(dto);
+		service.insertMemberAddress(dto);
 		
 		return "";
 	}

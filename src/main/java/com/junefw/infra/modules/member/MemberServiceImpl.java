@@ -22,8 +22,16 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	@Override
-	public int insert(Member dto) throws Exception {
-		return dao.insert(dto);
+	public int insertMember(Member dto) throws Exception {
+		return dao.insertMember(dto);
+	}
+	@Override
+	public int insertMemberEmail(Member dto) throws Exception {
+		return dao.insertMemberEmail(dto);
+	}
+	@Override
+	public int insertMemberAddress(Member dto) throws Exception {
+		return dao.insertMemberAddress(dto);
 	}
 
 	@Override

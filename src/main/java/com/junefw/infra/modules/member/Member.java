@@ -32,6 +32,7 @@ public class Member {
 	private String ifmpNumberMobile;
 	private String ifmpNumberHome;
 	//멤버_어드레스
+	private String ifmaZipCode;
 	private String ifmaAddress1;
 	private String ifmaAddress2;
 	//--------------------------------------------------------------
@@ -196,6 +197,12 @@ public class Member {
 	}
 	public void setIfmaAddress2(String ifmaAddress2) {
 		this.ifmaAddress2 = ifmaAddress2;
+	}
+	public String getIfmaZipCode() {
+		return ifmaZipCode;
+	}
+	public void setIfmaZipCode(String ifmaZipCode) {
+		this.ifmaZipCode = ifmaZipCode;
 	}
 	
 }
