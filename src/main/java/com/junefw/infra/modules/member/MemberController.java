@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.junefw.infra.modules.code.Code;
+
 @Controller
 public class MemberController {
 
@@ -59,8 +61,44 @@ public class MemberController {
 		service.insertMember(dto);
 		service.insertMemberEmail(dto);
 		service.insertMemberAddress(dto);
+		service.insertMemberPhoneMobile(dto);
+		service.insertMemberPhoneHome(dto);
+		
+//		List<Member> list = service.selectList();
+//		model.addAttribute("list", list);
 		
 		return "";
+	}
+	
+	@RequestMapping(value = "/member/memberEditForm")
+	public String memberEditForm(Model model, MemberVo vo) throws Exception {
+		
+		Member rt = service.selectOne(vo);
+		model.addAttribute("rt", rt);
+		
+		//코드값 가져오기
+		List<Member> list = service.selectListCode();
+		model.addAttribute("list", list);
+		
+		return "member/memberEditForm";
+	}
+	
+	@RequestMapping(value = "/member/memberUpdt")
+	public String memberUpdt(Model model, Member dto) throws Exception {
+
+		// 업데이트 하는 구문
+		service.updateMember(dto);
+		service.updateMemberEmail(dto);
+		service.updateMemberAddress(dto);
+		service.updateMemberPhoneMobile(dto);
+		service.updateMemberPhoneHome(dto);
+
+		// View을 다시 뿌려주기 위한 구문
+		Member rt = service.selectOne(dto);
+		model.addAttribute("rt", rt);
+
+		return "/member/memberView" ;
+
 	}
 	
 }

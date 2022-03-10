@@ -20,16 +20,15 @@
 </head>
 <body>
 
-	<form method="post" action="/infra/member/memberInst">
+	<form method="post" action="/infra/member/memberUpdt">
 		
 		<!-- ifmmSeq -->
-		<input type="hidden" name="ifmmSeq" value="${fn:length(list2)+1}">
-		<!-- ifmmRegDate -->
-		<input type="hidden" name="ifmmRegDate" value="20220309">
+		<input type="hidden" name="ifmmSeq" value="<c:out value="${rt.ifmmSeq}"/>">
+		<!-- ifmmEditDate -->
 		
 		<div class="container-fluid">
 			<div class="row bg-dark mb-2" style="height: 42px;">
-				<div class="col col-md-12 text-white d-flex align-items-center ps-4 fw-bold fs-4">회원등록</div>
+				<div class="col col-md-12 text-white d-flex align-items-center ps-4 fw-bold fs-4">회원 정보 수정</div>
 			</div>
 
 			<div class="row mb-2">
@@ -43,23 +42,23 @@
 			<table class="table" style="border-collapse: collapse;">
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">아이디</th>
-					<td class="text-start" colspan="3"><input type="text" name="ifmmId" style="min-width: 200px;" placeholder="영문(대소문자),숫자,특수문자"><span class="ms-2"><a href="#" class="fs-6"
+					<td class="text-start" colspan="3"><input type="text" name="ifmmId" style="min-width: 200px;" placeholder="영문(대소문자),숫자,특수문자" value="<c:out value="${rt.ifmmId}"/>"><span class="ms-2"><a href="#" class="fs-6"
 							style="text-decoration: none;">아이디 중복체크</a></span></td>
 				</tr>
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">비밀번호</th>
-					<td class="text-start"><input type="password" name="ifmmPwd" style="min-width: 200px;"></td>
+					<td class="text-start"><input type="password" name="ifmmPwd" style="min-width: 200px;" value="<c:out value="${rt.ifmmPwd}"/>"></td>
 					<th style="width: 200px;" class="bg-light text-start">비밀번호확인</th>
-					<td class="text-start"><input type="password" name="ifmmPwdConfirm" style="min-width: 200px;"></td>
+					<td class="text-start"><input type="password" name="ifmmPwdConfirm" style="min-width: 200px;" value="<c:out value="${rt.ifmmPwd}"/>"></td>
 				</tr>
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">이름</th>
-					<td class="text-start" colspan="3"><input type="text" name="ifmmName" style="min-width: 200px;"></td>
+					<td class="text-start" colspan="3"><input type="text" name="ifmmName" style="min-width: 200px;" value="<c:out value="${rt.ifmmName}"/>"></td>
 				</tr>
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">이메일</th>
 					<td class="text-start" colspan="3">
-						<input type="email" name="ifmeEmailFull" style="min-width: 200px;">
+						<input type="email" name="ifmeEmailFull" style="min-width: 200px;" value="<c:out value="${rt.ifmeEmailFull}"/>">
 						<span class="ms-2"><a href="#" class="fs-6" style="text-decoration: none;">이메일 중복체크</a></span>
 						<span class="ms-2">
 						<input type="checkbox" name="ifmmEmailConsentNy" id="email_check" value="1"><label for="email_check">이메일 수신 동의</label>
@@ -82,23 +81,23 @@
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">주소</th>
 					<td class="text-start" colspan="3">
-						<input type="text" name="ifmaZipCode" placeholder="우편번호"> <button class="btn btn-sm btn-outline-dark">우편번호 검색</button>
+						<input type="text" name="ifmaZipCode" placeholder="우편번호" value="<c:out value="${rt.ifmaZipCode}"/>"> <button class="btn btn-sm btn-outline-dark">우편번호 검색</button>
 						<br>
-						<input type="text" name="ifmaAddress1" placeholder="주소">			
-						<input type="text" name="ifmaAddress2" placeholder="상세주소">					
+						<input type="text" name="ifmaAddress1" placeholder="주소" value="<c:out value="${rt.ifmaAddress1}"/>">			
+						<input type="text" name="ifmaAddress2" placeholder="상세주소" value="<c:out value="${rt.ifmaAddress2}"/>">					
 					</td>
 				</tr>
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">휴대폰</th>
 					<td class="text-start" colspan="3">
-						<input type="text" name="ifmpNumberMobile" placeholder="01012345678">
+						<input type="text" name="ifmpNumberMobile" placeholder="01012345678" value="<c:out value="${rt.ifmpNumberMobile}"/>">
 						<input type="checkbox" name="ifmmSmsConsentNy" id="sms_check" value="1"><label for="sms_check">SMS 수신 동의</label>
 						<input type="hidden" name="ifmmSmsConsentNy" id="sms_check_hidden" value="0">
 					</td>
 				</tr>
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">전화번호</th>
-					<td class="text-start" colspan="3"><input type="text" name="ifmpNumberHome" placeholder="021234567"></td>
+					<td class="text-start" colspan="3"><input type="text" name="ifmpNumberHome" placeholder="021234567" value="<c:out value="${rt.ifmpNumberHome}"/>"></td>
 				</tr>
 			</table>
 
@@ -114,7 +113,7 @@
 				
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">생년월일</th>
-					<td class="text-start"><input type="text" name="ifmmDob" placeholder="19960607"></td>
+					<td class="text-start"><input type="text" name="ifmmDob" placeholder="19960607" value="<c:out value="${rt.ifmmDob}"/>"></td>
 				</tr>
 				<tr>
 					<th style="width: 200px;" class="bg-light text-start">성별</th>
@@ -170,7 +169,7 @@
 			</div>
 
 			<div class="text-center">
-				<input type="submit" class="btn btn-sm btn-outline-success border border-3 container1" value="등록">
+				<input type="submit" class="btn btn-sm btn-outline-success border border-3 container1" value="수정">
 				<button type="button" class="btn btn-sm btn-outline-dark border border-3 container1" onClick="window.close()">취소</button>
 			</div>
 

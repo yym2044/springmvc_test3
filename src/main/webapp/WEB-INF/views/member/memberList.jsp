@@ -238,17 +238,24 @@
 			 -->
 		</div>
 		
+		
+		
+<!-- 		숨겨놓은 부분 시작
+
+
+
+	
 		<div class="container-fluid bg-light">
 			<br>
-			<!-- 
+			
 			<div class="fs-3">Code</div>
- 			-->
+ 			
 
 
 
 
 
-			<!-- 웹 화면 -->
+			웹 화면
 			<div class="width90 d-none d-sm-block">
 
 				<h4 class="d-flex">
@@ -346,7 +353,7 @@
 				</div>
 			</div>
 
-			<!-- 모바일 -->
+			모바일
 			<div class="width90 d-sm-none">
 
 				<div class="row mb-2">
@@ -398,7 +405,14 @@
 					</div>
 				</div>
 			</div>
-
+			
+			
+			
+ 				숨겨놓은 부분 끝			-->
+ 				
+ 				
+ 				
+ 				
 			<br> <br>
 			<div class="width92">
 				<div class="row">
@@ -439,35 +453,39 @@
 	
 	<c:otherwise>
 
-		<table class="table table-sm border border-1 box-white container1" style="min-width: 1000px; border-collapse: separate;">
-			<tr>
-				<th><input type="checkbox" name="checkbox1" onclick="selectAll1(this)" class="form-check-input"></th>
-				<th>번호</th>
-				<th>아이디</th>
-				<th>이름</th>
-				<th>회원등급</th>
-				<th>상태</th>
-				<th>가입일</th>
-				<th>관리</th>
-			</tr>
-			<c:forEach items="${list}" var="item" varStatus="status">
+		<table class="table table-hover table-sm border border-1 box-white container1" style="min-width: 1000px; border-collapse: separate;">
+			<thead>
 				<tr>
-					<td><input type="checkbox" name="checkbox1" class="form-check-input"></td>
-					<td><c:out value="${item.ifmmSeq}"/></td>					
-					<td><c:out value="${item.ifmmId}"/></td>					
-					<td><c:out value="${item.ifmmName}"/></td>					
-					<td><c:out value="${item.ifmmGrade}" /></td>
-					<td><c:out value="${item.ifmmStatus}"/></td>					
-					<td><c:out value="${item.ifmmRegDate}"/></td>					
-					<td>
-						<div class="d-flex justify-content-center align-items-center">
-							<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-chat-right-dots"></i></a> 
-							<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-envelope"></i></a> 
-							<a href="/infra/member/memberView?ifmmSeq=${item.ifmmSeq}" class="btn btn-sm btn-outline-dark py-0" onclick="window.open('memberView?ifmmSeq=${item.ifmmSeq}','name','resizable=no width=1000 height=500');return false">관리</a>
-						</div>
-					</td>			
-				<tr>
-			</c:forEach>
+					<th><input type="checkbox" name="checkbox1" onclick="selectAll1(this)" class="form-check-input"></th>
+					<th>번호</th>
+					<th>아이디</th>
+					<th>이름</th>
+					<th>회원등급</th>
+					<th>상태</th>
+					<th>가입일</th>
+					<th>관리</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${list}" var="item" varStatus="status">
+					<tr>
+						<td><input type="checkbox" name="checkbox1" class="form-check-input"></td>
+						<td><c:out value="${item.ifmmSeq}"/></td>					
+						<td><c:out value="${item.ifmmId}"/></td>					
+						<td><c:out value="${item.ifmmName}"/></td>					
+						<td><c:out value="${item.ifmmGrade}" /></td>
+						<td><c:out value="${item.ifmmStatus}"/></td>					
+						<td><c:out value="${item.ifmmRegDate}"/></td>					
+						<td>
+							<div class="d-flex justify-content-center align-items-center">
+								<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-chat-right-dots"></i></a> 
+								<a href="#" class="btn btn-sm btn-outline-dark py-0"><i class="bi bi-envelope"></i></a> 
+								<a href="/infra/member/memberView?ifmmSeq=${item.ifmmSeq}" class="btn btn-sm btn-outline-dark py-0"> <%-- onclick="window.open('memberView?ifmmSeq=${item.ifmmSeq}','name','resizable=no width=1000 height=500');return false" --%>관리</a>
+							</div>
+						</td>			
+					<tr>
+				</c:forEach>
+			</tbody>
 		</table>
 		
 	</c:otherwise>
@@ -477,7 +495,7 @@
 				<div class="row ps-2">
 					<div class="col col-md-4 ms-1 p-0">
 						<a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"> <i class="bi bi-trash"></i>
-						</a> <a class="btn btn-outline-primary" href="./memberForm" onclick="window.open('memberForm','name','resizable=no width=1000 height=500');return false"> <i class="bi bi-plus-square"></i>
+						</a> <a class="btn btn-outline-primary" href="/infra/member/memberForm"> <!-- onclick="window.open('memberForm','name','resizable=no width=1000 height=500');return false" --> <i class="bi bi-plus-square"></i>
 						</a>
 					</div>
 					<!-- 같은줄 or 따로뺄지 -->

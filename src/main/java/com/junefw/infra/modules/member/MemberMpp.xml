@@ -22,6 +22,7 @@
 			, a.ifmmRegDate
 			, (select ifcdName from infrCode where ifcdSeq = a.ifmmStatusCd) as ifmmStatus
 		FROM infrMember a
+		WHERE ifmmDelNy = 0
 		
 	</select>
 	
@@ -40,6 +41,7 @@
 			a.ifmmSeq
 			, a.ifmmName
 			, a.ifmmId
+			, a.ifmmPwd
 			, (select ifcdName from infrCode where ifcdSeq = a.ifmmGenderCd) as ifmmGenderName
 			, a.ifmmDob
 			, a.ifmmFavoriteColor
@@ -56,6 +58,7 @@
 			, (select ifmpNumber from infrMemberPhone where ifmpDeviceCd = 26 and ifmmSeq = #{ifmmSeq}) as ifmpNumberMobile
 			, (select ifmpNumber from infrMemberPhone where ifmpDeviceCd = 25 and  ifmmSeq = #{ifmmSeq}) as ifmpNumberHome
 			
+			, d.ifmaZipCode
 			, d.ifmaAddress1
 			, d.ifmaAddress2
 			
@@ -67,6 +70,8 @@
 			1=1
 		AND a.ifmmSeq = #{ifmmSeq}
 	</select>
+	
+	<!-- INSERT -->
 	
 	<insert id="insertMember">
 	INSERT INTO
@@ -129,5 +134,103 @@
         , 1
 	);
 	</insert>
+	
+	<insert id="insertMemberPhoneMobile">
+	INSERT INTO
+	infrMemberPhone (
+		ifmmSeq
+        , ifmpNumber
+        , ifmpDeviceCd
+        , ifmpDefaultNy
+    ) VALUES (
+		#{ifmmSeq}				
+        , #{ifmpNumberMobile}		
+        , 26
+        , 1
+    )
+	</insert>
+	<insert id="insertMemberPhoneHome">
+	INSERT INTO
+	infrMemberPhone (
+		ifmmSeq
+        , ifmpNumber
+        , ifmpDeviceCd
+        , ifmpDefaultNy
+    ) VALUES (
+		#{ifmmSeq}
+        , #{ifmpNumberHome}		
+        , 25
+        , 1
+    )
+	</insert>
+	
+	
+	
+	<!-- UPDATE -->
+	
+	<update id="updateMember">
+	UPDATE infrMember
+	SET
+		ifmmName = #{ifmmName}
+		, ifmmId = #{ifmmId}
+		, ifmmPwd = #{ifmmPwd}
+		, ifmmGenderCd = #{ifmmGenderCd}
+		, ifmmDob = #{ifmmDob}
+		, ifmmDelNy = 0
+		, ifmmGradeCd = #{ifmmGradeCd}
+		, ifmmStatusCd = 78
+		, ifmmEmailConsentNy = #{ifmmEmailConsentNy}
+		, ifmmSmsConsentNy = #{ifmmSmsConsentNy}
+		, ifmmPushConsentNy = #{ifmmPushConsentNy}
+	WHERE
+		1 = 1
+	AND
+		ifmmSeq = #{ifmmSeq}
+	</update>
+	<update id="updateMemberEmail">
+	UPDATE infrMemberEmail
+	SET
+		ifmeEmailFull = #{ifmeEmailFull}
+		, ifmeDefaultNy = 1
+	WHERE
+		1 = 1
+	AND
+		ifmmSeq = #{ifmmSeq}
+	</update>
+	<update id="updateMemberAddress">
+	UPDATE infrMemberAddress
+	SET
+		ifmaZipCode = #{ifmaZipCode}
+		, ifmaAddress1 = #{ifmaAddress1}
+		, ifmaAddress2 = #{ifmaAddress2}
+		, ifmaDefaultNy = 1
+	WHERE
+		1 = 1
+	AND
+		ifmmSeq = #{ifmmSeq}
+	</update>
+	
+	<update id="updateMemberPhoneMobile">
+	UPDATE infrMemberPhone
+	SET
+		ifmpNumber = #{ifmpNumberMobile}
+		, ifmpDeviceCd = 26
+		, ifmpDefaultNy = 1
+	WHERE
+		1 = 1
+	AND
+		ifmmSeq = #{ifmmSeq}
+	</update>
+	<update id="updateMemberPhoneHome">
+	UPDATE infrMemberPhone
+	SET
+		ifmpNumber = #{ifmpNumberHome}
+		, ifmpDeviceCd = 25
+		, ifmpDefaultNy = 1
+	WHERE
+		1 = 1
+	AND
+		ifmmSeq = #{ifmmSeq}
+	</update>
 	
 </mapper>

@@ -68,7 +68,8 @@
 			</table>
 
 			<div class="text-center">
-				<a href="./memberEdit.html" type="button" class="btn btn-outline-dark btn-sm border border-3 container1">정보수정</a>
+				<a href="/infra/member/memberList" type="button" class="btn btn-outline-dakr btn-sm border border-3 container1">목록으로</a>
+				<a href="/infra/member/memberEditForm?ifmmSeq=<c:out value="${rt.ifmmSeq}"/>" type="button" class="btn btn-outline-dark btn-sm border border-3 container1">정보수정</a>
 			</div>
 
 			<div class="row mb-2">
@@ -102,46 +103,6 @@
 					<td class="text-start"><c:out value="${rt.ifmmPushConsentNyText}"/></td>
 				</tr>
 			</table>
-
-			<div class="row mb-2">
-				<div class="col col-md-12 d-flex">
-					<i class="bi bi-caret-right-square-fill text-primary"></i> <span class="ms-2 fw-bold">관리자 운영 메모</span>
-				</div>
-			</div>
-
-			<div class="row mb-4">
-				<div class="col-12 col-lg-10 pe-0">
-					<input type="text" class="form-control" id="inputMemo" name="inputMemo" autocomplete="off">
-				</div>
-				<div class="col-12 col-lg text-end">
-					<a class="btn btn-outline-primary" onclick="add_row()" onclick="clearInput()">등록</a> <a
-						class="btn btn-outline-danger" onclick="delete_row()">삭제</a>
-				</div>
-			</div>
-			<div class="table-responsive">
-				<table class="table container2" style="border-collapse: separate; min-width: 800px;">
-					<thead>
-						<tr>
-							<th style="width: 100px;">번호</th>
-							<th>내용</th>
-							<th style="width: 200px;">작성일</th>
-							<th style="width: 100px;">작성자</th>
-						</tr>
-					</thead>
-					<tbody id="my-tbody">
-						<!-- 
-			<tr>
-			<td colspan="5">관리자 메모가 없습니다.</td>
-			</tr> 
-		-->
-					</tbody>
-				</table>
-			</div>
-
-			<div class="text-center">
-				<button type="button" class="btn btn-sm btn-outline-dark border border-3 container1" onClick="window.close()">닫기</button>
-			</div>
-
 
 
 		</div>
