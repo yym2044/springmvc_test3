@@ -6,12 +6,9 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<!-- mysql s 2022.02.28 -->
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver" />
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/CPCPCP" />
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/CPCPCP" />
 		<property name="username" value="root" />
 		<property name="password" value="qmfkfl2055!" />
 	</bean>
